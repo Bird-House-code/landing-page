@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amir Khan — Senior Graphic Designer &amp; Art Director</title>
+<meta name="description" content="Amir Khan is a Senior Graphic Designer and Art Director based in Los Angeles, CA with 15+ years of experience across brand, social, and editorial design.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --green: #22ff55;
+    --charcoal: #33383a;
+    --paper: #f4f4f4;
+    --orange: #f4791f;
+    --ink: #16181a;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.5;
+  }
+
+  h1, h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
+  }
+
+  /* ---- Static nav ---- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 40px;
+    background: #ffffff;
+    border-bottom: 1px solid transparent;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    padding: 40px 40px 60px;
+    max-width: 900px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+    line-height: 1.15;
+    margin-bottom: 28px;
+  }
+
+  .cta {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 28px;
+    border: 1px solid var(--orange);
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+
+  .cta:hover {
+    background: var(--ink);
+    color: var(--orange);
+    border-color: var(--ink);
+    transform: scale(1.04);
+  }
+
+  .hero p {
+    font-size: 16px;
+    max-width: 620px;
+    color: #2a2a2a;
+  }
+
+  /* ---- Section shared ---- */
+  section {
+    padding: 60px 40px;
+  }
+
+  /* ---- Clients ---- */
+  .clients {
+    background: var(--green);
+  }
+
+  .clients h2 {
+    font-size: 40px;
+    margin-bottom: 32px;
+  }
+
+  .clients ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', monospace;
+  }
+
+  .clients li {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    padding: 6px 0;
+  }
+
+  /* ---- Contact ---- */
+  .contact-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contact-block {
+    flex: 1 1 320px;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .contact-block span {
+    font-family: 'Instrument Serif', serif;
+    font-size: 40px;
+  }
+
+  .contact-left {
+    background: var(--charcoal);
+    color: #fff;
+  }
+
+  .contact-left:hover {
+    background: #fff;
+    color: var(--charcoal);
+  }
+
+  .contact-right {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .contact-right:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* ---- Footer note ---- */
+  footer {
+    background: var(--green);
+    padding: 40px;
+  }
+
+  footer p {
+    max-width: 640px;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  footer a {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 20px; }
+    .hero { padding: 30px 20px 40px; }
+    .hero h1 { font-size: 36px; }
+    section { padding: 40px 20px; }
+    .contact-block { min-height: 220px; }
+    .contact-block span { font-size: 32px; }
+    footer { padding: 30px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#about">Work Samples</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+  <section class="hero" id="about">
+    <h1>Amir Khan is a Senior Graphic Designer &amp; Art Director based in Los Angeles, CA</h1>
+    <a class="cta" href="#contact">available for hire!</a>
+    <p>
+      Amir Khan is a Senior Graphic Designer and Art Director with 15+ years of experience
+      across brand, social, and editorial design. He previously led social media design at
+      CollegeHumor / Dropout, and now works as a freelance art director for a range of
+      media, entertainment, and lifestyle clients.
+    </p>
+  </section>
+
+  <section class="clients">
+    <h2>Selected Clients</h2>
+    <ul>
+      <li>Dropout / CollegeHumor — social media design lead</li>
+      <li>Gizmodo — freelance art direction</li>
+      <li>Lemonade Insurance — freelance art direction</li>
+      <li>Headgum Podcasts — freelance art direction</li>
+      <li>Witness Immersive — freelance art direction</li>
+      <li>Natural Retreats — freelance art direction</li>
+      <li>Voices Festival Productions — brand &amp; logo identity design</li>
+    </ul>
+  </section>
+
+  <div class="contact-wrap" id="contact">
+    <a class="contact-block contact-left" href="mailto:amirkhanstuff@gmail.com">
+      <span>Email</span>
+    </a>
+    <a class="contact-block contact-right" href="https://amirkhan.site" target="_blank" rel="noopener">
+      <span>Full Portfolio</span>
+    </a>
+  </div>
+
+  <footer>
+    <p>
+      This is a lightweight, text-only summary of Amir Khan's portfolio, provided as a
+      reliably readable alternative to the full interactive site at
+      <a href="https://amirkhan.site">amirkhan.site</a>.
+    </p>
+  </footer>
+</main>
+
+</body>
+</html>
