@@ -14,9 +14,11 @@
   :root {
     --green: #22ff55;
     --charcoal: #33383a;
-    --paper: #f6f1db;
+    --paper: #f4f4f4;
     --orange: #f4791f;
     --ink: #16181a;
+    --cream: #f6f1db;
+    --gutter: 5vw;
   }
 
   * { box-sizing: border-box; }
@@ -24,7 +26,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    margin: 30;
+    margin: 0;
     font-family: 'Inter', sans-serif;
     color: var(--ink);
     background: #ffffff;
@@ -54,7 +56,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 28px 40px;
+    padding: 28px var(--gutter);
     background: #ffffff;
     border-bottom: 1px solid transparent;
   }
@@ -66,18 +68,31 @@
 
   /* ---- Hero ---- */
   .hero {
-    padding: 40px 40px 60px;
-    max-width: 100%;
+    background: var(--cream);
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px var(--gutter);
+  }
+
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 32px;
   }
 
   .hero h1 {
-    font-size: 100px;
-    line-height: 1.15;
-    margin-bottom: 28px;
+    font-size: clamp(42px, 6vw, 92px);
+    line-height: 1.1;
+    max-width: 1100px;
   }
 
   .cta {
     display: inline-block;
+    flex-shrink: 0;
     background: var(--orange);
     color: #fff;
     text-decoration: none;
@@ -85,37 +100,35 @@
     border-radius: 999px;
     font-size: 15px;
     font-weight: 500;
-    margin-bottom: 28px;
     border: 1px solid var(--orange);
-    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
   }
 
   .cta:hover {
-    background: var(--paper);
+    background: var(--ink);
     color: var(--orange);
     border-color: var(--ink);
     transform: scale(1.04);
   }
 
   .hero p {
-    font-size: 16px;
-    max-width: 620px;
+    font-size: 18px;
+    max-width: 760px;
     color: #2a2a2a;
   }
 
   /* ---- Section shared ---- */
   section {
-    padding: 60px 40px;
+    padding: 60px var(--gutter);
   }
 
   /* ---- Clients ---- */
   .clients {
     background: var(--green);
-    padding: 50;
   }
 
   .clients h2 {
-    font-size: 72px;
+    font-size: clamp(32px, 5.5vw, 72px);
     margin-bottom: 32px;
   }
 
@@ -123,19 +136,23 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', monospace;
   }
 
   .clients li {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 48px;
-    padding: 6px 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(20px, 2.6vw, 32px);
+    padding: 10px 0;
+  }
+
+  .clients li em {
+    font-style: italic;
   }
 
   /* ---- Contact ---- */
   .contact-wrap {
     display: flex;
     flex-wrap: wrap;
+    background: var(--cream);
   }
 
   .contact-block {
@@ -145,38 +162,28 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    transition: background 0.25s ease, color 0.25s ease;
+    color: var(--ink);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .contact-block + .contact-block {
+    border-left: 4px solid #ffffff;
   }
 
   .contact-block span {
     font-family: 'Instrument Serif', serif;
-    font-size: 40px;
+    font-size: clamp(32px, 4vw, 48px);
   }
 
-  .contact-left {
-    background: var(--charcoal);
-    color: #fff;
-  }
-
-  .contact-left:hover {
-    background: #fff;
-    color: var(--charcoal);
-  }
-
-  .contact-right {
-    background: var(--paper);
-    color: var(--ink);
-  }
-
-  .contact-right:hover {
+  .contact-block:hover {
     background: var(--orange);
-    color: var(--paper);
+    color: #fff;
   }
 
   /* ---- Footer note ---- */
   footer {
     background: var(--green);
-    padding: 40px;
+    padding: 40px var(--gutter);
   }
 
   footer p {
@@ -189,14 +196,17 @@
     text-decoration: underline;
   }
 
-  @media (max-width: 600px) {
-    nav { padding: 20px; }
-    .hero { padding: 30px 20px 40px; }
-    .hero h1 { font-size: 36px; }
-    section { padding: 40px 20px; }
+  @media (max-width: 700px) {
+    .hero-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
     .contact-block { min-height: 220px; }
-    .contact-block span { font-size: 32px; }
-    footer { padding: 30px 20px; }
+    .contact-block + .contact-block {
+      border-left: none;
+      border-top: 4px solid #ffffff;
+    }
   }
 </style>
 </head>
@@ -209,43 +219,43 @@
 
 <main>
   <section class="hero" id="about">
-    <h1>Amir Khan is a Graphic Designer &amp; Artist based in Los Angeles, California ☺︎</h1>
-    <a class="cta" href="#contact">available for hire!</a>
+    <div class="hero-top">
+      <h1>Amir Khan is a Graphic Designer and Artist based in <I>Los Angeles, California</I> ☺︎</h1>
+      <a class="cta" href="#contact">available for hire!</a>
+    </div>
     <p>
       Amir Khan is a Senior Graphic Designer and Art Director with 15+ years of experience
-      across brand, social, and editorial design. He previously led social media design at
-      CollegeHumor / Dropout, and now works as a freelance art director for a range of
-      media, entertainment, and lifestyle clients.
+      across brand, social, and editorial design. Now he works as a freelance senior designer for a range of
+      media, entertainment, and lifestyle clients. He is open for work based locally or remote, full-time, part-time, or freelance.
     </p>
   </section>
 
   <section class="clients">
     <h2>Selected Clients</h2>
     <ul>
-      <li>Dropout / CollegeHumor — social media and editorial design lead</li>
-      <li>Gizmodo — freelance illustration</li>
-      <li>Lemonade Insurance — freelance graphic designer</li>
-      <li>Headgum Podcasts — freelance visual identity, illustration/li>
-      <li>Witness Immersive — freelance art direction</li>
-      <li>Natural Retreats — freelance marketing and email designer</li>
-
-    </ul>
+      <li>Dropout / CollegeHumor — <em>social media and editorial design lead</em></li>
+      <li>Gizmodo — <em>freelance illustration</em></li>
+      <li>Lemonade Insurance — <em>freelance design</em></li>
+      <li>Headgum Podcasts — <em>freelance visual identity and illustration</em></li>
+      <li>Witness Immersive — <em>freelance art direction</em></li>
+      <li>Natural Retreats — <em>freelance marketing and email design</em></li>
+    
   </section>
 
   <div class="contact-wrap" id="contact">
-    <a class="contact-block contact-left" href="mailto:amirkhanstuff@gmail.com">
+    <a class="contact-block" href="mailto:amirkhanstuff@gmail.com">
       <span>Email</span>
     </a>
-    <a class="contact-block contact-right" href="https://amirkhan.site" target="_blank" rel="noopener">
+    <a class="contact-block" href="https://amirkhan.site" target="_blank" rel="noopener">
       <span>Full Portfolio</span>
     </a>
   </div>
 
   <footer>
-    <p><font color="#fff">
+    <p>
       This is a lightweight, text-only summary of Amir Khan's portfolio, provided as a
       reliably readable alternative to the full interactive site at
-      <a href="https://amirkhan.site">amirkhan.site</a>.</font>
+      <a href="https://amirkhan.site">amirkhan.site</a>.
     </p>
   </footer>
 </main>
